@@ -3,3 +3,5 @@ A game of "Rock, Paper, Scissors" and "Rock, Paper, Scissors, Lizard, Spock" / c
 
 
 and this is the application itself => "https://r-p-s-l-s-game-b951cc.netlify.app/'
+
+By: Moath Elmarmori
