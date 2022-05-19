@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Rock Paper Scissors, [Lizard, spock]</title>
+  </head>
+  <body>
+    <!-- start overlay -->
+    <div class="overlay">
+      <div class="the-image rock-paper-scissors-rules">
+        <div class="rules-heading-cont">
+          <h2>rules</h2>
+          <img src="images/icon-close.svg" alt="" class="close" />
+        </div>
+        <img src="images/image-rules.svg" alt="" class="rules-image" />
+      </div>
+    </div>
+    <!-- end overlay -->
+    <!-- start starting app  -->
+    <div class="page-container">
+      <div class="starting-app">
+        <div class="container">
+          <div class="start-app-container">
+            <!-- start rock paper scissors component  -->
+            <div class="start-app r-p-s-component">
+              <div class="choose three-possibilties" id="r-p-s">
+                <div class="img-cont paper">
+                  <img src="images/icon-paper.svg" alt="" />
+                </div>
+                <div class="img-cont rock">
+                  <img src="images/icon-rock.svg" alt="" />
+                </div>
+                <div class="img-cont scissors">
+                  <img src="images/icon-scissors.svg" alt="" />
+                </div>
+              </div>
+              <p class="choosing r-p-s-choosing">rock, paper, scissors</p>
+            </div>
+            <!-- end rock paper scissors component  -->
+
+            <h1 class="heading">or</h1>
+
+            <!-- start rock paper scissors lizard spock component  -->
+            <div class="start-app r-p-s-l-s-component">
+              <div class="choose">
+                <div class="img-cont paper">
+                  <img src="images/icon-paper.svg" alt="" />
+                </div>
+                <div class="img-cont rock">
+                  <img src="images/icon-rock.svg" alt="" />
+                </div>
+                <div class="img-cont scissors">
+                  <img src="images/icon-scissors.svg" alt="" />
+                </div>
+                <div class="img-cont lizard">
+                  <img src="images/icon-lizard.svg" alt="" />
+                </div>
+                <div class="img-cont spock">
+                  <img src="images/icon-spock.svg" alt="" />
+                </div>
+              </div>
+              <p class="choosing r-p-s-l-s-choosing">
+                rock, paper, scissors, lizard, spock
+              </p>
+            </div>
+            <!-- end rock paper scissors lizard spock component  -->
+          </div>
+        </div>
+      </div>
+      <!-- end starting app  -->
+
+      <!-- start playing the game -->
+      <div class="game d-none">
+        <div class="container">
+          <div class="score-container">
+            <div class="score">
+              <div class="game-name">
+                <p>rock</p>
+                <p>paper</p>
+                <p>scissors</p>
+              </div>
+              <div class="the-score">
+                <p>score</p>
+                <h1 class="score-num">0</h1>
+              </div>
+            </div>
+          </div>
+
+          <!-- start rock paper scissors component  -->
+          <div class="component-container d-none">
+            <div class="r-p-s-component">
+              <div class="choose three-possibilties" id="r-p-s">
+                <div class="img-cont paper" data-select="paper">
+                  <img src="images/icon-paper.svg" alt="" />
+                </div>
+                <div class="img-cont rock" data-select="rock">
+                  <img src="images/icon-rock.svg" alt="" />
+                </div>
+                <div class="img-cont scissors" data-select="scissors">
+                  <img src="images/icon-scissors.svg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end rock paper scissors component  -->
+          <!-- start rock paper scissors lizard spock component  -->
+          <div class="component-container d-none">
+            <div class="r-p-s-l-s-component">
+              <div class="choose three-possibilties" id="r-p-s">
+                <div class="img-cont paper" data-select="paper">
+                  <img src="images/icon-paper.svg" alt="" />
+                </div>
+                <div class="img-cont rock" data-select="rock">
+                  <img src="images/icon-rock.svg" alt="" />
+                </div>
+                <div class="img-cont scissors" data-select="scissors">
+                  <img src="images/icon-scissors.svg" alt="" />
+                </div>
+                <div class="img-cont lizard" data-select="lizard">
+                  <img src="images/icon-lizard.svg" alt="" />
+                </div>
+                <div class="img-cont spock" data-select="spock">
+                  <img src="images/icon-spock.svg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- end rock paper scissors lizard spock component  -->
+          <!-- start reslut display  -->
+          <div class="result-display">
+            <div class="you picking winner">
+              <p>you picked</p>
+              <div class="img-cont paper">
+                <img src="images/icon-paper.svg" alt="" />
+              </div>
+            </div>
+            <div class="the-result-container">
+              <h1>you <span class="the-reslut">lose</span></h1>
+              <p>play again</p>
+            </div>
+            <div class="computer picking">
+              <p>the house picked</p>
+              <div class="img-cont rock">
+                <img src="images/icon-rock.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <!-- end reslut display  -->
+        </div>
+      </div>
+    </div>
+    <!-- end playing the game -->
+    <!-- start rules of the game  -->
+    <div class="rules-container d-none">
+      <p>rules</p>
+    </div>
+    <!-- end rules of the game  -->
+
+    
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,545 @@
+/* start gloabl rules  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-background: #172446;
+  --paper-color: #5573ef;
+  --scissors-color: #eca623;
+  --rock-color: #e03f5e;
+  --spock-color: #4dbacf;
+  --lizard-color: #8c5ee5;
+  --score-color: #58546b;
+  --score-border-color: #46546e;
+}
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-color: var(--main-background);
+  color: white;
+  overflow-y: hidden;
+  text-transform: uppercase;
+}
+.d-none {
+  display: none !important;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #5150504f;
+  z-index: 1000;
+  display: none;
+}
+.overlay.active {
+  display: block;
+}
+.overlay .the-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 0 3em 3em;
+  border-radius: 15px;
+}
+.overlay .the-image .rules-heading-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.overlay .the-image .rules-heading-cont h2 {
+  color: var(--main-background);
+  padding: 2em 0;
+}
+.overlay .the-image .rules-heading-cont img {
+  width: 1.25em;
+  height: 1.25em;
+  cursor: pointer;
+}
+@media (max-width: 500px) {
+  .overlay .the-image {
+    padding: 0 2em 3em;
+  }
+  .overlay .the-image > img {
+    width: 15em;
+  }
+}
+.container {
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  /* min-height: 100vh; */
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* start rock paper scissors component  */
+
+.r-p-s-component .choose {
+  background-image: url(../images/bg-triangle.svg);
+  min-height: 20em;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 22em;
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 6em;
+}
+.r-p-s-component .choose .img-cont {
+  max-width: 100%;
+  position: absolute;
+  cursor: pointer;
+}
+.r-p-s-component .choose .img-cont:first-child {
+  left: 0;
+  top: 0;
+}
+.r-p-s-component .choose .img-cont:nth-child(2) {
+  top: 0;
+  right: 0;
+}
+.r-p-s-component .choose .img-cont:last-child {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.r-p-s-component .choose .img-cont::before,
+.r-p-s-component .choose .img-cont::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: 0.2s;
+}
+.r-p-s-component .choose .img-cont::before {
+  width: 6em;
+  height: 6em;
+  background-color: #fff;
+  z-index: 10;
+}
+.r-p-s-component .choose .img-cont::after {
+  width: 8em;
+  height: 8em;
+  /* background-color: blue; */
+  z-index: 9;
+}
+.r-p-s-component .choose .img-cont img {
+  position: relative;
+  z-index: 11;
+  width: 3em;
+  height: 3em;
+}
+/* end rock paper scissors component  */
+/* start rock paper scissors lizard spock component  */
+.r-p-s-l-s-component .choose {
+  background-image: url(../images/bg-pentagon.svg);
+  min-height: 26em;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 28em;
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 6em;
+}
+.r-p-s-l-s-component .choose .img-cont {
+  max-width: 100%;
+  position: absolute;
+  cursor: pointer;
+}
+.r-p-s-l-s-component .choose .img-cont:first-child {
+  left: 50%;
+  transform: translate(-50%, -30%);
+}
+.r-p-s-l-s-component .choose .img-cont:nth-child(2) {
+  top: 50%;
+  transform: translateY(-100%);
+  right: 0;
+}
+.r-p-s-l-s-component .choose .img-cont:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  transform: translate(-140%, 20%);
+}
+.r-p-s-l-s-component .choose .img-cont:nth-child(4) {
+  top: 50%;
+  transform: translateY(-100%);
+  /* right: 0; */
+}
+.r-p-s-l-s-component .choose .img-cont:last-child {
+  bottom: 0;
+  /* right: 0; */
+  transform: translate(130%, 20%);
+}
+.r-p-s-l-s-component .choose .img-cont::before,
+.r-p-s-l-s-component .choose .img-cont::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: 0.2s;
+}
+.r-p-s-l-s-component .choose .img-cont::before {
+  width: 6em;
+  height: 6em;
+  background-color: #fff;
+  z-index: 10;
+}
+.r-p-s-l-s-component .choose .img-cont::after {
+  width: 8em;
+  height: 8em;
+  /* background-color: blue; */
+  z-index: 9;
+}
+.r-p-s-l-s-component .choose .img-cont img {
+  position: relative;
+  z-index: 11;
+  width: 3em;
+  height: 3em;
+}
+.r-p-s-l-s-component .choose .img-cont:last-child img {
+  left: 0.25em;
+}
+/* end rock paper scissors lizard spock component  */
+/* hovering and other styling that matches the two components  */
+/* .r-p-s-component .choose .img-cont.paper::after,
+.r-p-s-l-s-component .choose .img-cont.paper::after */
+.img-cont.paper::after,
+.img-cont.paper::after {
+  background-color: var(--paper-color);
+}
+.img-cont.rock::after,
+.img-cont.rock::after {
+  background-color: var(--rock-color);
+}
+.img-cont.scissors::after,
+.img-cont.scissors::after {
+  background-color: var(--scissors-color);
+}
+.img-cont.lizard::after {
+  background-color: var(--lizard-color);
+}
+.img-cont.spock::after {
+  background-color: var(--spock-color);
+}
+
+.r-p-s-component .choose .img-cont.paper:hover::before,
+.r-p-s-l-s-component .choose .img-cont.paper:hover::before {
+  background-color: var(--paper-color);
+}
+.r-p-s-component .choose .img-cont.rock:hover::before,
+.r-p-s-l-s-component .choose .img-cont.rock:hover::before {
+  background-color: var(--rock-color);
+}
+.r-p-s-component .choose .img-cont.scissors:hover::before,
+.r-p-s-l-s-component .choose .img-cont.scissors:hover::before {
+  background-color: var(--scissors-color);
+}
+.r-p-s-l-s-component .choose .img-cont.spock:hover::before {
+  background-color: var(--spock-color);
+}
+.r-p-s-l-s-component .choose .img-cont.lizard:hover::before {
+  background-color: var(--lizard-color);
+}
+/* end gloabl rules  */
+
+/* start app starter  */
+.starting-app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.start-app-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-basis: 100%;
+  /* min-height: 75vh; */
+}
+.start-app {
+  /* to manipulate the size of the component  */
+  font-size: 8px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.start-app .choosing {
+  font-size: 2.5em;
+  color: var(--main-background);
+  text-transform: capitalize;
+  background-color: white;
+  display: flex;
+  width: fit-content;
+  padding: 0.75em;
+  font-weight: 500;
+  border-radius: 7px;
+  box-shadow: 0 0 5px 5px rgb(82, 82, 82);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.start-app .choosing:hover {
+  background-color: var(--main-background);
+  color: white;
+}
+.start-app-container .heading {
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.75em;
+}
+@media (max-width: 767px) {
+  .start-app-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .start-app {
+    font-size: 6px;
+  }
+  .start-app-container .heading {
+    margin: 2em 0;
+  }
+}
+/* end app starter  */
+/* start rock paper scissors game  */
+.game {
+  padding: 2em 0;
+}
+.game .score-container {
+  /* width: 80%; */
+  display: flex;
+  justify-content: center;
+}
+.game .score-container .score {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 1.25em;
+  /* background-color: red; */
+  text-transform: uppercase;
+  border: 1px solid var(--score-border-color);
+  border-radius: 7px;
+  box-shadow: 0 0 4px 2px var(--score-border-color);
+}
+.game .score-container .score p {
+  font-weight: 600;
+  font-size: 1.25em;
+}
+.game .score-container .score .the-score {
+  background-color: white;
+  color: var(--score-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 2em;
+  border-radius: 7px;
+  height: 100%;
+}
+.game .score-container .score .the-score h1 {
+  font-size: 3em;
+}
+.game .component-container {
+  font-size: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  margin-top: 6em;
+}
+.rules-container {
+  position: fixed;
+  bottom: 1em;
+  right: -1em;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  text-transform: uppercase;
+  padding: 0.5em 1.5em;
+  font-size: 1.25rem;
+  border: 2px solid var(--score-border-color);
+  border-radius: 7px;
+  cursor: pointer;
+  box-shadow: 0 0 4px 1px var(--score-border-color);
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+.rules-container:hover {
+  background-color: white;
+  color: var(--score-border-color);
+}
+@media (max-width: 767px) {
+  .game .component-container {
+    font-size: 10px;
+    margin-top: 5em;
+  }
+  .rules-container {
+    bottom: 1em;
+    left: 50%;
+  }
+}
+@media (max-width: 500px) {
+  .game .score-container {
+    font-size: 10px;
+  }
+  .game .component-container {
+    font-size: 8px;
+  }
+}
+.result-display {
+  min-height: 50vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5em;
+  text-transform: uppercase;
+  position: relative;
+}
+.result-display .picking {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 40vh;
+  position: relative;
+  z-index: 100;
+}
+.result-display .picking.winner:before {
+  content: "";
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  /* background-color: red; */
+  z-index: 19;
+  border-radius: 50%;
+  box-shadow: 0 0 1px 1.5em #2a3553, 0 0 1px 2.5em #242f4d, 0 0 1px 4em #1f2a4a;
+  top: 50%;
+  transform: translateY(-20%);
+}
+.result-display .picking.computer {
+  transform: translateX(20%);
+}
+.result-display .picking p {
+  font-size: 2em;
+  z-index: 100;
+}
+.result-display .picking .img-cont {
+  position: relative;
+  max-width: 100%;
+}
+.result-display .picking .img-cont img {
+  width: 3em;
+  height: 3em;
+  position: relative;
+  z-index: 11;
+}
+.result-display .picking .img-cont.spock img {
+  left: 0.25em;
+}
+.result-display .picking .img-cont::before,
+.result-display .picking .img-cont::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.result-display .picking .img-cont::before {
+  width: 6em;
+  height: 6em;
+  background-color: white;
+  z-index: 10;
+}
+.result-display .picking .img-cont::after {
+  width: 8em;
+  height: 8em;
+  /* background-color: blue; */
+  z-index: 9;
+}
+.result-display .the-result-container {
+  transform: translate(30%, 20%);
+  text-align: center;
+  z-index: 300;
+}
+.result-display .the-result-container h1 {
+  margin-bottom: 0.5em;
+}
+.result-display .the-result-container p {
+  font-size: 1.5em;
+  padding: 0.5em 1em;
+  background-color: white;
+  color: var(--main-background);
+  border-radius: 7px;
+  cursor: pointer;
+  box-shadow: 0 0 4px 4px var(--score-border-color);
+  transition: 0.3s;
+}
+.result-display .the-result-container p:hover {
+  background-color: var(--main-background);
+  color: white;
+}
+@media (max-width: 991px) {
+  .result-display .picking {
+    font-size: 12px;
+  }
+  .result-display .the-result-container {
+    font-size: 12px;
+  }
+}
+@media (max-width: 767px) {
+  .result-display .the-result-container {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .result-display .picking {
+    font-size: 9px;
+  }
+}
+@media (max-width: 500px) {
+  .result-display .picking {
+    font-size: 7px;
+  }
+  .result-display .the-result-container {
+    transform: translate(-50%, 100%);
+  }
+  .result-display .picking.winner::before {
+    content: "";
+    position: absolute;
+    width: 6rem;
+    height: 6rem;
+    z-index: 19;
+    border-radius: 50%;
+    box-shadow: 0 0 1px 1em #2a3553, 0 0 1px 2em #242f4d, 0 0 1px 3em #1f2a4a;
+    top: 50%;
+    transform: translateY(-1%);
+  }
+}
+/* end rock paper scissors game  */
